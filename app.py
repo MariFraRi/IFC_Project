@@ -29,7 +29,8 @@ fig_categoria = px.bar(df,
                        x="categoria_ambiental", 
                        y="total_inversion_ifc_aprobada_junta_millones_usd",
                        title="Distribución de inversiones por categoría ambiental",
-                       text_auto=True) 
+                       text_auto=True, 
+                       color="categoria_ambiental")
 
 fig_industria = px.bar(df['industria'].value_counts().reset_index(), 
                        x='count', y='industria', 
