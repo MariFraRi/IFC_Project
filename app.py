@@ -25,8 +25,11 @@ fig_inversion = px.box(df, x="industria", y="total_inversion_ifc_aprobada_junta_
                         title="Distribución de inversión IFC por industria",
                         labels={'industria': "Industria", 'total_inversion_ifc_aprobada_junta_millones_usd': "Inversión IFC aprobada (millones USD)"})
 
-fig_categoria = px.pie(df, names="categoria_ambiental", values="total_inversion_ifc_aprobada_junta_millones_usd",
-                        title="Distribución de inversiones por categoría ambiental")
+fig_categoria = px.bar(df, 
+                       x="categoria_ambiental", 
+                       y="total_inversion_ifc_aprobada_junta_millones_usd",
+                       title="Distribución de inversiones por categoría ambiental",
+                       text_auto=True) 
 
 fig_industria = px.bar(df['industria'].value_counts().reset_index(), 
                        x='count', y='industria', 
