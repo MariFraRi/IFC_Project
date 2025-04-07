@@ -25,8 +25,7 @@ fig_inversion = px.box(df, x="industria", y="total_inversion_ifc_aprobada_junta_
                         title="Distribución de inversión IFC por industria",
                         labels={'industria': "Industria", 'total_inversion_ifc_aprobada_junta_millones_usd': "Inversión IFC aprobada (millones USD)"})
 
-df_grouped = df.groupby("categoria_ambiental", as_index=False).sum()
-
+df_grouped = df.groupby("categoria_ambiental", as_index=False)[["total_inversion_ifc_aprobada_junta_millones_usd"]].sum()
 
 fig_categoria = px.bar(df_grouped, 
                        x="categoria_ambiental", 
